@@ -15,6 +15,8 @@ class T_restaurantController extends Controller
      */
     public function index()
     {
+        $t_restaurants = T_restaurant::get();
+        return view('show',['t_restaurants'=>$t_restaurants]);
     }
 
     // message
@@ -60,10 +62,10 @@ class T_restaurantController extends Controller
         $t_restaurant -> name_food = $request->name_food;
         $t_restaurant -> description = $request->description;
         $t_restaurant -> price = $request->price;
-        $t_restaurant -> image = $name;
+        $t_restaurant -> image = $request->image;
         $t_restaurant -> id_category = $request->id_category;
         $t_restaurant->save();
-        return redirect("/show")->with('status','Create success!');
+        return redirect("/t_restaurants")->with('status','Create success!');
     }
 
     /**
@@ -73,9 +75,14 @@ class T_restaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show()
+
     {
         // $restaurant = T_restaurant::find($id);
-        return view('show');
+        // $t_restaurant = T_restaurant::join('categories', 'categories.id', 't_restaurant.id_category')
+        //     ->select('categories.categories as categories', 't_restaurant.*')
+        //     ->get();
+        // dd($t_restaurant);
+        return view("show");
     }
 
     /**

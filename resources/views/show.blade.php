@@ -20,19 +20,17 @@
 <div class="Create">
     <a role="button" href="/Create" class="btn btn-primary" onclick="return confirm('Bạn có muốn thêm mới!')">Create</a>
 </div>
-@foreach($restaurants as $restaurant)
+@foreach($t_restaurants as $t_restaurant)
     <div class="cart-cars">
         <div class="">
-            <img class="img" src="/image/{{ $restaurant->image }}" alt="...">
+            <img class="img" src="/image/{{ $t_restaurant->image }}" alt="...">
         </div>
         <div class="cart-content">
-            <p>{{ $restaurant->name_food }}</p>
-            <p>Price: {{ $restaurant->price }}</p>
+            <p>{{ $t_restaurant->name_food }}</p>
+            <p>Price: {{ $t_restaurant->price }}</p>
             <button class="button">Buy Now</button>
-            <!-- <a href="/{{$restaurant["id"]}}/Edit" role="button" class="btn btn-primary" onclick="return confirm('Bạn có muốn sửa!')">Edit</a> -->
         </div>
     </div>
 @endforeach
-<div>dfsfdf</div>
 </body>
 </html>

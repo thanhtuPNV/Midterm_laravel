@@ -16,16 +16,17 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('show');
 });
 
 // Route::get('/show',[T_restaurantController::class, 'show']);
-// Route::resource('restaurants', T_restaurantController::class);
+Route::resource('t_restaurants', T_restaurantController::class);
 
 Route::get("/Create", [T_restaurantController::class, "create"]);
 Route::post("/Store", [T_restaurantController::class, "store"]);
 
 // Route::get("/create", [T_foodController::class, "create"]);
 // Route::post("/store", [T_foodController::class, "store"]);
-Route::get("/show", [T_restaurantController::class, "show"]);
+// Route::get("show", [T_restaurantController::class, "show"]);
+// Route::resource("show",T_restaurantController::class);
 // Route::get('/showdetail/{id}', [T_foodController::class,'detail']);
