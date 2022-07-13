@@ -12,7 +12,7 @@ class T_restaurant extends Model
     public $timestamps = false;
     protected $table='t_restaurants';
     protected $fillable = ['name_food','descriptions','price','image','id_category'];
-    public function categories(){
+    public function category(){
         return $this->belongsTo(Category::class,'id_category','id');
     }
 }
